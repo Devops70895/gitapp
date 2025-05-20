@@ -3,19 +3,19 @@
 on:
   push:
     branches:
-	  - master
+      - master
   pull_request:
     branches:
-	  - master
+      - master
 
 jobs:
   build:
-      name: Azure Pipeline
-	    runs-on: ubuntu-latest
-		steps:
-        - namme : Azure Pipeline Action
-		  uses: Azure /pipelines@v1
-		    with:
-              azure-devops-project-url: https://dev.azure.com/johnwebb1993/AgileProject
-			  azure-pipeline-name: 'webapp'
-			  azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+    name: Azure Pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Pipeline Action
+        uses: Azure/pipelines@v1
+        with:
+          azure-devops-project-url: https://dev.azure.com/johnwebb1993/AgileProject
+          azure-pipeline-name: 'webapp'
+          azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
